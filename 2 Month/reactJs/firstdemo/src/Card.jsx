@@ -16,4 +16,3 @@ const Card = ({ title }) => {
 }
 
 export default Card
-

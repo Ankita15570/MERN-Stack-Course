@@ -27,7 +27,6 @@ function App() {
 
   return (
     <>
-
       <input
         name="name"
         placeholder="Enter Your Name"
@@ -40,7 +39,6 @@ function App() {
       {cardData.map((each) => (
         <Card title={each.title} />
       ))}
-
 
     </>
   );
