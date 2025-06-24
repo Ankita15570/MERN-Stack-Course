@@ -19,9 +19,6 @@ app.use(bodyParser.json());
 
 connectMongoDB()
 
-
-
-
 // CREATE - Add a new student (POST /students)
 app.post("/students",CreateStudent);
  
