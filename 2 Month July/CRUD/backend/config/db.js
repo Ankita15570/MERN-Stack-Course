@@ -1,16 +1,17 @@
-
 const mongoose = require("mongoose");
-const connectMongoDB = async() => {
-    try {
-  const connection  =    await mongoose.connect("mongodb://127.0.0.1:27017/students");
-  if (connection === true){
-  console.log("connected DB..")
-  }
-    } catch (error) {
-     console.log(error)
 
+const connectMongoDb = async () => {
+  try {
+    const connection = await mongoose.connect(
+      "mongodb://127.0.0.1:27017/school-database"
+    );
+
+    if (connection) {
+      console.log("Connected DB...");
     }
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-module.exports = connectMongoDB
-
+module.exports = connectMongoDb;
