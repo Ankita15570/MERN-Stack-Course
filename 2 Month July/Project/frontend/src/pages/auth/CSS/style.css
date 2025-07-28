@@ -1,0 +1,58 @@
+body{
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin:0;
+    padding:0;
+    font-family:'Roboto',sans-serif;
+    background-color: #fafafa;
+}
+
+.box{
+    height:395px;
+    width:380px;
+    border: 1px solid rgb(228, 227, 227);
+    background-color: #fafafa;
+    margin-left:50px;
+}
+.instagram-icon{
+    margin-top: 15px;
+    width:200px;
+    margin-top: auto;
+}
+
+.form-control{
+    width: 55% !important;
+   margin-left: 85px;
+}
+
+
+.googlelogo{
+    width: 15%;
+    margin-top: 50px;
+}
+
+.btn{
+    width:55%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.logo-google {
+    max-width: 35px;
+}
+
+.signup {
+    color: #1095F6;
+}
