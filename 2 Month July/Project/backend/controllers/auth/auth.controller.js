@@ -5,7 +5,7 @@
 // 5. /api/auth/change-password  ==>POST
 
 const User = require("../../models/user/user.model");
-const { generateToken} = require("../../utils/jwtfunctions");
+const { generateToken } = require("../../utils/jwtfunctions");
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt');
 const nodemailer = require("nodemailer")
@@ -14,7 +14,7 @@ const transporter = nodemailer.createTransport({
     service: "gamil",
     auth: {
         user: "anshupatil1901@gamil.com",
-        pass: "hmpz zaci luim twsw"
+        pass: "bpvf zyhb lpdk xyhz"
     },
 });
 
@@ -59,21 +59,35 @@ const registerUser = async (req, res) => {
 
 const forgetPassword = async (req, res) => {
     try {
-        const { email } = req.body;
+        const { email } = req.body
         const userData = await User.findOne({ email })
 
         if (!userData) {
-            return res.status(201).json({ message: "User not found in db" })
+            return res.status(201).json({ message: "User NOt found in db" })
         }
 
-        const Otp = Math.floor(100000 + Math.random() * 1000)
+        const Otp = Math.floor(10000 + Math.random() * 1000)
 
         userData.resetOtp = Otp
+        userData.resetOtpExpiration = Date.now() + 10 * 60 * 1000;    
+
+        await userData.save();
+
+        const mailOptions = {
+            from: "anshupatil1901@gamil.com",
+            to: email,
+            subject: "Password resent OTP",
+            text: `Your OTP for password reset is: ${Otp}.It will expire in 10 minutes.`,
+        };
+
+        await transporter.sendMail(mailOptions);
+
         res.status(201).json({ message: "Otp send to email", Otp: Otp })
+
     } catch (error) {
         console.log(error)
     }
-}
+};
 
 const verifyOtp = async (req, res) => {
     try {
