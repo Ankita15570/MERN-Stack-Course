@@ -1,34 +1,102 @@
-import React from 'react';
-import './CSS/register.css';
-import instaLogo from '../../asets/instalog.png'; 
-import { Link } from 'react-router-dom';
+import React from 'react'
+import instaimg from '../../asets/instalog.png';
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button';
+import axios from 'axios';
 
 const Register = () => {
-    return (
-        <div className="insta-container">
-           
-            <div className="insta-right">
-                <div className="register-box my-2">
-                    <img className="logo" src={instaLogo} alt="Instagram Logo" />
-                    <p className="heading">Sign up to see photos and videos from your friends.</p>
-                    <form>
-                        <input type="text" className="one" placeholder="Mobile Number or Email" required />
-                        <input type="text " className="one"  placeholder="Full Name" required />
-                        <input type="text" className="one" placeholder="Username" required />
-                        <input type="password"className="one" placeholder="Password" required /> </form>
+  const [email, setEmail] = React.useState('')
+  const [fullName, setFullName] = React.useState('')
+  const [userName, setUserName] = React.useState('')
+  const [password, setPassword] = React.useState('')
 
-                        <button type="submit" className="btn btn-primary  mt-2 btn"><Link to="/birthday">Sign Up</Link></button>
+  const submitForm = async () => {
+    try {
+      console.log(email, "email")
+      console.log(fullName, "fullName")
+      console.log(userName, "userName")
+      console.log(password, "password")
 
-                        
-
-                        <p className="text-center mt-5">
-                            Have an account? <b><Link to="/">Log in</Link></b>
-                        </p>
-                   
-                </div>
-            </div>
-        </div>
+      const apiResponse = await axios.post("http://localhost:9090/api/auth/register" , {
+        email : email,
+        fullName : fullName,
+        userName : userName,
+        password : password,
+      }
     );
-};
+    if(apiResponse.data.token){
+      localStorage.setItem('userToken', apiResponse.data.token);
+    }
+    } catch (error) {
+      console.log(error)
+    }
+  };
 
-export default Register;
+  return (
+    <div>
+      <div className="register-container">
+        <div className="box-1">
+          <div className="box-1-logo">
+            <img src={instaimg} alt="" className="Instagram-logo" />
+            <p className="Info">Sign up to see photos and  videos<br /> from your friends.
+            </p>
+
+            <button type="submit" className="btn btn-primary google-loginbtn mb-2">Log in with google</button>
+          </div>
+
+          <form className="login-form">
+            <div className="form-group">
+              <input type="email"
+                className="form-control my-2"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email" 
+              onChange={(e) => setEmail(e.target.value)}/>
+            </div>
+
+            <div className="form-group">
+              <input type="text"
+                className="form-control my-2"
+                id="exampleInputfullName"
+                placeholder="FullName" 
+              onChange={(e) => setFullName(e.target.value)}/>
+            </div>
+
+            <div className="form-group">
+              <input type="text"
+                className="form-control my-2 "
+                id="exampleInputuserName"
+                placeholder="UserName" 
+              onChange={(e) => setUserName(e.target.value)}/>
+            </div>
+
+            <div className="form-group">
+              <input type="password"
+                className="form-control my-2 "
+                id="exampleInputPassword1"
+                placeholder="Password" 
+              onChange={(e) => setPassword(e.target.value)}/>
+            </div>
+
+            <Button varient="primary" onClick={submitForm}>Sign Up</Button>
+
+            <p className="Info-2 mb-2 mt-2">By signing up, you agree to our Terms, Data<br />
+              Policy and Cookies Policy.</p>
+            <hr />
+          </form>
+        </div>
+
+        <div className="box-2">
+          <div className="box-2Info">
+            <p className="text-1">Have an account ? <br /><span className="loginbtn"><b><Link to="/">Log in</Link></b></span></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  )
+}
+
+export default Register

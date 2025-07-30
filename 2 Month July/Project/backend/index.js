@@ -2,11 +2,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const connectMongoDb = require("./config/db");
-
 const authRoute = require("./routes/auth.route")
 const userRoute = require("./routes/user.route")
 const postRoute = require("./routes/post.route")
-require("dotenv").config();
+require("dotenv").config()
 
 const app = express()
 app.use(cors())

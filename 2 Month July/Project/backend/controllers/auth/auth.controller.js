@@ -11,11 +11,11 @@ const bcrypt = require('bcrypt');
 const nodemailer = require("nodemailer")
 
 const transporter = nodemailer.createTransport({
-    service: "gamil",
-    auth: {
-        user: "anshupatil1901@gamil.com",
-        pass: "bpvf zyhb lpdk xyhz"
-    },
+  service: "gmail",
+  auth: {
+    user: "anshupatil1901@gmail.com",
+    pass: "jdds kgfr yoaz rhpa",
+  },
 });
 
 const loginUser = async (req, res) => {
@@ -74,7 +74,7 @@ const forgetPassword = async (req, res) => {
         await userData.save();
 
         const mailOptions = {
-            from: "anshupatil1901@gamil.com",
+            from: "anshupatil1901@gmail.com",
             to: email,
             subject: "Password resent OTP",
             text: `Your OTP for password reset is: ${Otp}.It will expire in 10 minutes.`,
@@ -144,7 +144,6 @@ const changePassword = async (req, res) => {
 }
 
 module.exports = {
-    transporter,
     loginUser,
     registerUser,
     forgetPassword,
