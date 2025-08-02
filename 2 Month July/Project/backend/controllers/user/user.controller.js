@@ -1,13 +1,21 @@
-//1. /api/user/profile/:userId ==>GET
-//2. /api/user/profile/:userId ==>PUT
-//3. /api/user/profile/:userId ==>DELETE
+const User = require("../../models/user/user.model");
 
-const getUserProfile = (req, res) => {
-    try {
-    } catch (error) {
+const getUserProfile = async (req, res) => {
+  try {
+    const userId = req.user.userId;
+    const userData = await User.findById(userId).select("-password -resetOtp -resetOtpExpiration -otpSentCount");
+
+    if (!userData) {
+      return res.status(401).json({ message: "User not found" });
     }
-}
+
+    res.status(201).json({ message: "User profile retrieved successfully", userData });
+  } catch (error) {
+    console.error("Get user profile error:", error);
+    res.status(401).json({ message: "Server error during profile retrieval" });
+  }
+};
 
 module.exports = {
-    getUserProfile
-}
+  getUserProfile,
+};
