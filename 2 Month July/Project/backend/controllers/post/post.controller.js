@@ -4,7 +4,7 @@
 // 4. /api/posts/feed           ==> GET
 // 5. /api/posts/:userId        ==> GET
 
-const Post = require("../../auth/post/post.controller");
+const Post = require("../../models/post/post.model");
 
 const createPost = async (req, res) => {
   try {
