@@ -107,7 +107,7 @@ box-sizing: border-box;
 
 .logo{
     width: 10%;
-    height: 1.5rem;
+    height: 5rem;
 }
 
 .logo-btn{
@@ -117,11 +117,16 @@ box-sizing: border-box;
     justify-content: center;
 }
 
+.logo-google{
+    width: 35px !important;
+}
+
 .box-2{
-     height:90px;
+     height:200px;
     width: 400px;
     border: 1px solid rgb(219,219,219);
     margin-top: 1rem;
+    background: #FFFFFF;
 }
 
 .text-1{
@@ -130,5 +135,22 @@ box-sizing: border-box;
 }
 .loginbtn{
     color: #4150F7;
+}
+
+.profile-img {
+  width: 250px;
+  height: 250px ;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-imgage{
+    width: 250px;
+    height: 250px ;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 

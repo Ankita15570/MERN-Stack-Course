@@ -20,7 +20,7 @@ const Home = () => {
       const token = localStorage.getItem("userToken");
 
       if (!token) {
-        navigate("/");
+        navigate("/login");
         return;
       }
 
@@ -47,7 +47,7 @@ useEffect(() => {
 
 const handleLogout = () => {
   localStorage.removeItem("userToken");
-  navigate("/")
+  navigate("/login")
 };
 
 
@@ -57,7 +57,7 @@ return (
     <div className="row ">
       <div className="col-md-4 my-4">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLQUXqMrzrmkxd3QpxGL5bzgxELsztrL1AgQ&s"
+          src="https://i.pinimg.com/736x/3a/3d/85/3a3d851e35d8db707d13c43a717b6b02.jpg"
           alt="Profile"
           className="profile-img rounded-circle"
         />
@@ -163,9 +163,9 @@ return (
       <Modal.Body>
         <form className="login-form">
           <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLQUXqMrzrmkxd3QpxGL5bzgxELsztrL1AgQ&s"
+            src="https://i.pinimg.com/736x/3a/3d/85/3a3d851e35d8db707d13c43a717b6b02.jpg"
             alt="Profile"
-            className="profile-img rounded-circle"
+            className="profile-imgage"
           />
           <div class="form-group">
             <input

@@ -118,7 +118,7 @@ const resetPassword = async (req, res) => {
         let decode
 
         try {
-            decode = jwt.verify(token, "JWT_SECRET");
+            decode = jwt.verify(token, process.env.JWT_SECRET);
         } catch (error) {
             return res.status(201).json({ message: "Token is not valid", error: error.message })
         }

@@ -37,7 +37,7 @@ const Register = () => {
   return (
     <div>
       <div className="register-container">
-        <div className="box-1">
+        < className="box-1">
           <div className="box-1-logo">
             <img src={instaimg} alt="" className="Instagram-logo" />
             <p className="Info">Sign up to see photos and  videos<br /> from your friends.
@@ -83,15 +83,15 @@ const Register = () => {
             <Button varient="primary" onClick={submitForm}>Sign Up</Button>
 
             <div className="text-center">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdP6AKFlNa3Afg4RJOp7OtR7RGRrlPE2KbLg&s"
-                  alt=""
-                  className="logo-google"
-                />
-              </div>
-              <br />
-              <button>Log in with Facebook</button>
-
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdP6AKFlNa3Afg4RJOp7OtR7RGRrlPE2KbLg&s"
+                alt=""
+                className="logo-google"
+              />
+            </div>
+            <br />
+            <button>Log in with Facebook</button>
+            <div className="box-2">
               <p className="text-center mt-5">Forgot Password</p>
               <p className="text-center">
                 Have an account?
@@ -99,12 +99,12 @@ const Register = () => {
                   <Link to="/"> Login </Link>
                 </b>
               </p>
-            </form>
-          </div>
-
-        </div>
-
+            </div>
+          </form>
       </div>
+    </div>
+
+    
   )
 }
 
