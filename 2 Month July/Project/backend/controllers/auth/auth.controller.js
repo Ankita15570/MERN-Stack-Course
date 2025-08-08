@@ -5,7 +5,7 @@
 // 5. /api/auth/change-password  ==>POST
 
 const User = require("../../models/user/user.model");
-const { generateToken } = require("../../utils/jwtfunctions");
+const { generateToken } = require("../../utils/jwtFunctions");
 const jwt = require("jsonwebtoken");
 const bcrypt = require('bcrypt');
 const nodemailer = require("nodemailer")

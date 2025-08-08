@@ -20,7 +20,7 @@ const Home = () => {
       const token = localStorage.getItem("userToken");
 
       if (!token) {
-        navigate("/login");
+        navigate("/");
         return;
       }
 
@@ -47,7 +47,7 @@ useEffect(() => {
 
 const handleLogout = () => {
   localStorage.removeItem("userToken");
-  navigate("/login")
+  navigate("/")
 };
 
 

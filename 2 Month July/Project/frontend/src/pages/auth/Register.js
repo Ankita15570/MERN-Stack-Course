@@ -37,7 +37,7 @@ const Register = () => {
   return (
     <div>
       <div className="register-container">
-        < className="box-1">
+        < div className="box-1">
           <div className="box-1-logo">
             <img src={instaimg} alt="" className="Instagram-logo" />
             <p className="Info">Sign up to see photos and  videos<br /> from your friends.
@@ -101,10 +101,11 @@ const Register = () => {
               </p>
             </div>
           </form>
+        </div>
       </div>
     </div>
 
-    
+
   )
 }
 
