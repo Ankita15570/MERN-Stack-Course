@@ -54,12 +54,10 @@ const getmypost = async (req, res) => {
 
 const updatePost = async (req, res) => {
   try {
-    const userId = req.user.userId;
-
-    const { description, location, active } = req.body;
+    const { postId, description, location, active } = req.body;
 
     const updatepost = await Post.findByIdAndUpdate(
-      userId,
+      postId,
       {
         description,
         location,

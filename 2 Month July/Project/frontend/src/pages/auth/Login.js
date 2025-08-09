@@ -15,13 +15,10 @@ const Login = () => {
 
   const submitLogin = async () => {
     try {
-      const apiResponse = await axios.post(
-        " http://localhost:9090/api/auth/login",
-        {
-          email: email,
-          password: password,
-        }
-      );
+      const apiResponse = await axios.post(" http://localhost:9090/api/auth/", {
+        email: email,
+        password: password,
+      });
 
       if (apiResponse.data.token) {
         localStorage.setItem("userToken", apiResponse.data.token);

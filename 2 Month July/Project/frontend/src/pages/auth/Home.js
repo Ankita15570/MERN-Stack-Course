@@ -3,10 +3,12 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import LogOutModel from "../../components/ModelPopups/LogOutModel";
 
 const Home = () => {
   const [show, setShow] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [logoutModelShow, setLogoutModelShow] = useState(false);
 
   const navigate = useNavigate();
 
@@ -49,6 +51,14 @@ const Home = () => {
     navigate("/");
   };
 
+  const openLogOutModelFunction = () => {
+    setLogoutModelShow(true);
+  };
+
+  const closeLogOutModelShow = () => {
+    setLogoutModelShow(false);
+  };
+
   return (
     <div className="container mt-5">
       <div className="row ">
@@ -61,7 +71,7 @@ const Home = () => {
         </div>
 
         <div className="col-md-4 text-center mt-5">
-          <h2 className="mb-3">Ankita Patil</h2>
+          <h2 className="mb-3">{userData?.fullName}</h2>
           <ul className="list-unstyled">
             <li>
               <strong>Username:</strong> {userData?.userName}
@@ -75,17 +85,26 @@ const Home = () => {
           </ul>
         </div>
 
-        <div className="col-md-4 text-center mt-5 ">
-          <button className="btn btn-danger my-1 w-100" onClick={handleLogout}>
-            Log Out
-          </button>
-          <button className="btn btn-primary my-1 w-100" onClick={handleShow}>
-            Edit Profile
-          </button>
-          <button className="btn btn-warning my-1 w-100">Delete Profile</button>
-          <button className="btn btn-success my-1 w-100">Create Post</button>
+        
+
+          <div className="col-md-4 text-center mt-5 ">
+            <button
+              className="btn btn-danger my-1 w-100"
+              onClick={openLogOutModelFunction}>
+                Log Out
+            </button>
+            <button className="btn btn-primary my-1 w-100" onClick={handleShow}>
+              Edit Profile
+            </button>
+            <button className="btn btn-warning my-1 w-100">
+              Delete Profile
+            </button>
+            <button className="btn btn-success my-1 w-100">Create Post</button>
+          </div>
         </div>
       </div>
+      
+
 
       {/* My post */}
 
@@ -191,6 +210,7 @@ const Home = () => {
               Submit
             </button>
           </form>
+          
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -201,7 +221,14 @@ const Home = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-    </div>
+      
+
+      <LogOutModel
+        show={logoutModelShow}
+        handleClose={closeLogOutModelShow}
+        handleConfirm={handleLogout}
+      />
+    
   );
 };
 

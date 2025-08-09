@@ -103,7 +103,7 @@ const verifyOtp = async (req, res) => {
     }
 
     if (Otp !== userData?.resetOtp) {
-      return res.status(201).json({ message: " Otp is Invalid" });
+      return res.status(401).json({ message: " Otp is Invalid" });
     }
 
     if (userData.resetOtpExpireation < Date.now()) {
@@ -125,12 +125,12 @@ const resetPassword = async (req, res) => {
       decode = jwt.verify(token, process.env.JWT_SECRET);
     } catch (error) {
       return res
-        .status(201)
+        .status(401)
         .json({ message: "Token is not valid", error: error.message });
     }
     const userData = await User.findById(decode.id);
     if (!userData) {
-      return res.status(201).json({ message: "User not found in db" });
+      return res.status(401).json({ message: "User not found in db" });
     }
 
     userData.password = newPassword;

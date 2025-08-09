@@ -10,7 +10,7 @@ const {
 
 const router = express.Router();
 
-router.post("/login", loginUser);
+router.post("/", loginUser);
 router.post("/register", registerUser);
 router.post("/forget-password", forgetPassword);
 router.post("/reset-password", resetPassword);
