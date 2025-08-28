@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -15,17 +16,24 @@ const Login = () => {
 
   const submitLogin = async () => {
     try {
-      const apiResponse = await axios.post(" http://localhost:9090/api/auth/", {
+      const apiResponse = await axios.post("http://localhost:9090/api/auth/", {
         email: email,
         password: password,
       });
 
       if (apiResponse.data.token) {
-        localStorage.setItem("userToken", apiResponse.data.token);
-        navigate("/home");
+        toast.success("Login successful !");
+        setTimeout(() => {
+          localStorage.setItem("userToken", apiResponse.data.token);
+          navigate("/home");
+        }, 1000);
       }
     } catch (error) {
       console.log(error);
+
+      const errorMessage =
+        error.response.data.message || "Invalid Email Or Password!";
+      console.log(errorMessage);
     }
   };
 
@@ -43,6 +51,13 @@ const Login = () => {
   useEffect(() => {
     checkLoginIsTrue();
   }, []);
+
+  const handleLoginWithGoogle = () => {
+    try {
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div className="login-page">
@@ -84,7 +99,7 @@ const Login = () => {
                 Sign Up
               </Button>
               <hr />
-              <div className="text-center">
+              <div className="text-center" onClick={handleLoginWithGoogle}>
                 <img src={googlelogo} alt="" className=" google-logo" />
               </div>
 
@@ -104,6 +119,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-right" autoClose={2000} />
     </div>
   );
 };

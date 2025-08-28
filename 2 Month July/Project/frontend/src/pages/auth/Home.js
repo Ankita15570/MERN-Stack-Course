@@ -85,26 +85,20 @@ const Home = () => {
           </ul>
         </div>
 
-        
-
-          <div className="col-md-4 text-center mt-5 ">
-            <button
-              className="btn btn-danger my-1 w-100"
-              onClick={openLogOutModelFunction}>
-                Log Out
-            </button>
-            <button className="btn btn-primary my-1 w-100" onClick={handleShow}>
-              Edit Profile
-            </button>
-            <button className="btn btn-warning my-1 w-100">
-              Delete Profile
-            </button>
-            <button className="btn btn-success my-1 w-100">Create Post</button>
-          </div>
+        <div className="col-md-4 text-center mt-5 ">
+          <button
+            className="btn btn-danger my-1 w-100"
+            onClick={openLogOutModelFunction}
+          >
+            Log Out
+          </button>
+          <button className="btn btn-primary my-1 w-100" onClick={handleShow}>
+            Edit Profile
+          </button>
+          <button className="btn btn-warning my-1 w-100">Delete Profile</button>
+          <button className="btn btn-success my-1 w-100">Create Post</button>
         </div>
       </div>
-      
-
 
       {/* My post */}
 
@@ -210,7 +204,6 @@ const Home = () => {
               Submit
             </button>
           </form>
-          
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
@@ -221,14 +214,13 @@ const Home = () => {
           </Button>
         </Modal.Footer>
       </Modal>
-      
 
       <LogOutModel
         show={logoutModelShow}
         handleClose={closeLogOutModelShow}
         handleConfirm={handleLogout}
       />
-    
+    </div>
   );
 };
 
