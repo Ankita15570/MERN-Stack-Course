@@ -6,17 +6,17 @@ const ExampleUseReducer = () => {
     console.log(currentValue, "Curren Value ==>");
     console.log(payload, "Payload ==>");
 
-    if (payload.type === "add") {
-      return currentValue + 5;
+    if (payload.type === "subtract") {
+      return currentValue - 5;
     }
     return currentValue;
   };
 
-  const [count, dispatch] = useReducer(reducer, 0);
+  const [count, dispatch] = useReducer(reducer, 1000);
 
   const handelAdd = () => {
     try {
-      dispatch({ type: "add" });
+      dispatch({ type: "subtract" });
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +26,7 @@ const ExampleUseReducer = () => {
     <div>
       <h1>Use Reducer Hook</h1>
       <h2>Count : {count}</h2>
-      <button onClick={handelAdd}>Add</button>
+      <button onClick={handelAdd}>Subtract</button>
     </div>
   );
 };
