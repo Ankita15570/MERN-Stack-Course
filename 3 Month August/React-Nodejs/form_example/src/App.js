@@ -5,11 +5,13 @@ import ExampleCustomHook from "./AllHooks/ExampleCustomHook";
 import { useState } from "react";
 import ExampleUseMemo from "./AllHooks/ExampleUseMemo";
 import ExampleUseReducer from "./AllHooks/ExampleUseReducer";
+import ExampleUseRef from "./AllHooks/ExampleUseRef";
 
 function App() {
   const [showCustomHook, setshowCustomHook] = useState(false);
   const [showUseMemo, setshowUseMemo] = useState(false);
   const [showUseReducer, setshowUseReducer] = useState(false);
+  const [showUseRef, setshowUseRef] = useState(false);
 
   const handelCustomHook = () => {
     try {
@@ -39,6 +41,17 @@ function App() {
     }
   };
 
+  const handelUseRef = () => {
+    try {
+      setshowCustomHook(false);
+      setshowUseMemo(false);
+      setshowUseReducer(false);
+      setshowUseRef(true);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="">
       <div className="container">
@@ -58,11 +71,17 @@ function App() {
               useReducer
             </button>
           </div>
+          <div className="col-md-1 mx-2">
+            <button className="btn btn-primary" onClick={handelUseRef}>
+              useRef
+            </button>
+          </div>
         </div>
       </div>
       {showCustomHook && <ExampleCustomHook />}
       {showUseMemo && <ExampleUseMemo />}
       {showUseReducer && <ExampleUseReducer />}
+      {showUseRef && <ExampleUseRef />}
     </div>
   );
 }
