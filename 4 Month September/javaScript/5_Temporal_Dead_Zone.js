@@ -1,4 +1,7 @@
 // Temporal Dead Zone (TDZ)
 
-console.log(x); // ReferenceError: Cannot access 'x' before initialization
-let x = 10;
+{
+  console.log(y); // ReferenceError: Cannot access 'y' before initialization
+  let y = 20;
+  console.log(y); // Output: 20
+}
