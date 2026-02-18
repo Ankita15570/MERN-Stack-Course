@@ -111,8 +111,8 @@ function App() {
         <div className="container-fluid">
           <div className="row h-100">
             {/* side bar */}
-            <div className="col-md-2 sidebar ">
-              <button className="btn compose-btn d-flex align-item-center gap-3 p-3">
+            <div className="col-md-2 sidebar">
+              <button className="btn compose-btn d-flex align-item-center gap-3 p-3 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

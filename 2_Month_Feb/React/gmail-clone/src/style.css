@@ -65,6 +65,7 @@ body {
   position: fixed;
   bottom: 0;
   top: 7%;
+  margin-top: 0.3lh;
 }
 
 .compose-btn:hover {
@@ -133,10 +134,9 @@ ul {
   background: white;
 }
 
-/* .email-row:hover{
-box-shadow: insert 1px 0 0 rbg(218, 220, 224), inset -1px 0 0 rgb(218, 220, 224), 0 1px 2px 0 rgba(60, 64, 67, 0.3),
-0 
-} */
+.email-row:hover {
+  box-shadow: 3px 0px 10px 0px #605d5dae;
+}
 
 .header-btn {
   padding: 0;
