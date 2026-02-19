@@ -1,6 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
+import DetailsCard from "./components/DetailsCard";
 
 export const App = () => {
   return (
@@ -8,100 +7,16 @@ export const App = () => {
       <div className="container">
         <div className="row my-2">
           <div className="col-md-3 my-2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://www.whattacraft.in/web/image/product.product/424/image_1920?unique=27180df"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+            <DetailsCard CardTitle="Title-1" CardDescription="Description-1" />
           </div>
           <div className="col-md-3 my-2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://www.whattacraft.in/web/image/product.product/424/image_1920?unique=27180df"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+            <DetailsCard CardTitle="Title-2" CardDescription="Description-2" />
           </div>
           <div className="col-md-3 my-2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://www.whattacraft.in/web/image/product.product/424/image_1920?unique=27180df"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+            <DetailsCard CardTitle="Title-3" CardDescription="Description-3" />
           </div>
           <div className="col-md-3 my-2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://www.whattacraft.in/web/image/product.product/424/image_1920?unique=27180df"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 my-2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://www.whattacraft.in/web/image/product.product/424/image_1920?unique=27180df"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
-          </div>
-          <div className="col-md-3 my-2">
-            <Card style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://www.whattacraft.in/web/image/product.product/424/image_1920?unique=27180df"
-              />
-              <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+            <DetailsCard CardTitle="Title-4" CardDescription="Description-4" />
           </div>
         </div>
       </div>
